@@ -5,14 +5,13 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 public class MemberService {
 
     private final MemberRepository memberRepository;
-
-    public MemberService(MemoryMemberRepository memoryMemberRepository) {
-        memberRepository = memoryMemberRepository;
-    }
 
     public Long join(Member member) {
         dublicateCheck(member);
