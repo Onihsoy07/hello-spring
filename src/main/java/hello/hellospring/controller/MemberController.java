@@ -3,6 +3,7 @@ package hello.hellospring.controller;
 import hello.hellospring.domain.Member;
 import hello.hellospring.dto.MemberForm;
 import hello.hellospring.service.MemberService;
+import java.sql.SQLException;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
