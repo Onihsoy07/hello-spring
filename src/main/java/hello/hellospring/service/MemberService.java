@@ -17,9 +17,18 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     public Long join(Member member) {
-        dublicateCheck(member);
-        memberRepository.save(member);
-        return member.getId();
+
+        long start = System.currentTimeMillis();
+
+        try {
+            dublicateCheck(member);
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("join 시간 : " + timeMs + "ms");
+        }
     }
 
     private void dublicateCheck(Member member) {
