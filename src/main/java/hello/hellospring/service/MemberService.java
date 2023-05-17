@@ -18,16 +18,16 @@ public class MemberService {
 
     public Long join(Member member) {
 
-        long start = System.currentTimeMillis();
+//        long start = System.currentTimeMillis();
 
         try {
             dublicateCheck(member);
             memberRepository.save(member);
             return member.getId();
         } finally {
-            long finish = System.currentTimeMillis();
-            long timeMs = finish - start;
-            System.out.println("join 시간 : " + timeMs + "ms");
+//            long finish = System.currentTimeMillis();
+//            long timeMs = finish - start;
+//            System.out.println("join 시간 : " + timeMs + "ms");
         }
     }
 
